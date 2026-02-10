@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hermes.ai - AI Business Solutions</title>
+    <title>Hermes AI - AI Data Unification Platform</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -13,6 +13,10 @@
             --black: #000000;
             --neon-green: #34d399;
             --neon-green-light: #6ee7b7;
+            --gov-blue: #3b82f6;
+            --real-estate-purple: #8b5cf6;
+            --medical-teal: #14b8a6;
+            --research-orange: #f59e0b;
             --gray-800: #1f2937;
             --gray-700: #374151;
             --gray-600: #4b5563;
@@ -178,10 +182,10 @@
             flex-wrap: wrap;
         }
 
-        /* Products Section */
-        .section {
+        /* Universal Data Unification Section */
+        .unification-section {
             padding: 6rem 0;
-            position: relative;
+            background-color: rgba(31, 41, 55, 0.2);
         }
 
         .section-title {
@@ -209,227 +213,40 @@
             margin: 0 auto;
         }
 
-        .products-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .product-info h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .product-icon {
-            width: 3rem;
-            height: 3rem;
-            background: linear-gradient(90deg, var(--neon-green), var(--neon-green-light));
-            border-radius: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--black);
-        }
-
-        .product-tagline {
-            font-size: 1.25rem;
-            color: var(--neon-green);
-            margin-bottom: 1.5rem;
-        }
-
-        .product-description {
-            color: var(--gray-400);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .features {
-            margin-bottom: 2rem;
-        }
-
-        .features h4 {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .features ul {
-            list-style: none;
-        }
-
-        .features li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--gray-300);
-        }
-
-        .features li::before {
-            content: "•";
-            color: var(--neon-green);
-            font-size: 1.2rem;
-        }
-
-        /* Robot Images */
-        .robot-image-bottom {
-            width: 100%;
-            max-width: 200px;
-            height: auto;
-            margin: 2rem auto 0;
-            display: block;
-            border-radius: 1rem;
-            opacity: 0.6;
-            transition: opacity 0.3s ease;
-        }
-
-        .robot-image-bottom:hover {
-            opacity: 0.9;
-        }
-
-        .product-visual {
-            background: linear-gradient(135deg, var(--gunmetal-dark), var(--gray-800));
-            border: 2px solid var(--gray-700);
-            border-radius: 1.5rem;
-            padding: 2rem;
-            transition: all 0.5s ease;
-            margin-top: 2rem;
-        }
-
-        .product-visual:hover {
-            border-color: var(--neon-green);
-            box-shadow: 0 0 30px rgba(52, 211, 153, 0.2);
-        }
-
-        .product-preview {
-            aspect-ratio: 16/9;
-            background: linear-gradient(90deg, rgba(52, 211, 153, 0.1), rgba(110, 231, 183, 0.1));
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-preview::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        .product-preview-content {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .product-preview-icon {
-            width: 4rem;
-            height: 4rem;
-            background: linear-gradient(90deg, var(--neon-green), var(--neon-green-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            color: var(--black);
-        }
-
-        .product-preview h4 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .product-preview p {
-            color: var(--gray-400);
-            font-size: 0.9rem;
-        }
-
-        .product-selector {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 3rem;
-        }
-
-        .product-btn {
-            padding: 0.5rem 1rem;
-            border: 2px solid var(--neon-green);
-            color: var(--neon-green);
-            background: transparent;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .product-btn:hover {
-            background: var(--neon-green);
-            color: var(--black);
-            box-shadow: 0 0 20px rgba(52, 211, 153, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .product-btn.active {
-            background: linear-gradient(90deg, var(--neon-green), var(--neon-green-light));
-            color: var(--black);
-            border: none;
-            box-shadow: 0 0 20px rgba(52, 211, 153, 0.2);
-        }
-
-        .product-btn.active:hover {
-            box-shadow: 0 0 30px rgba(52, 211, 153, 0.4);
-            transform: translateY(-2px) scale(1.02);
-        }
-
-        /* About Section */
-        .about-grid {
+        .unification-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
         }
 
-        .about-content h2 {
+        .unification-content h2 {
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
         }
 
-        .about-content p {
+        .unification-content p {
             color: var(--gray-300);
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
             line-height: 1.8;
         }
 
-        .stats-grid {
+        .features-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .stat-item {
+        .feature-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 1rem;
         }
 
-        .stat-icon {
+        .feature-icon {
             width: 2.5rem;
             height: 2.5rem;
             background: linear-gradient(90deg, var(--neon-green), var(--neon-green-light));
@@ -438,67 +255,273 @@
             align-items: center;
             justify-content: center;
             color: var(--black);
+            flex-shrink: 0;
         }
 
-        .stat-text h4 {
+        .feature-text h4 {
             font-weight: 600;
             margin-bottom: 0.25rem;
         }
 
-        .stat-text p {
+        .feature-text p {
             color: var(--gray-400);
             font-size: 0.875rem;
             margin: 0;
+            line-height: 1.5;
         }
 
-        .about-visual {
+        .unification-visual {
             background: linear-gradient(135deg, var(--gray-800), var(--gunmetal-dark));
             border: 2px solid var(--gray-700);
             border-radius: 1.5rem;
             padding: 2rem;
         }
 
-        .progress-item {
+        .data-source {
             margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(52, 211, 153, 0.1);
+            border-radius: 1rem;
+            border-left: 4px solid var(--neon-green);
         }
 
-        .progress-header {
+        .data-source-header {
             display: flex;
             align-items: center;
             gap: 0.75rem;
             margin-bottom: 0.5rem;
         }
 
-        .progress-dot {
-            width: 0.75rem;
-            height: 0.75rem;
+        .data-source-icon {
+            width: 1.5rem;
+            height: 1.5rem;
             background: var(--neon-green);
-            border-radius: 50%;
+            border-radius: 0.375rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--black);
+            font-size: 0.875rem;
         }
 
-        .progress-title {
+        .data-source-title {
             color: var(--neon-green);
             font-weight: 600;
         }
 
-        .progress-bar {
-            height: 0.5rem;
-            background: var(--gray-700);
-            border-radius: 0.25rem;
+        .data-source p {
+            color: var(--gray-300);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Industries Grid Section */
+        .industries-section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .industry-card {
+            background: linear-gradient(135deg, var(--gunmetal-dark), var(--gray-800));
+            border: 2px solid var(--gray-700);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            transition: all 0.5s ease;
+            position: relative;
             overflow: hidden;
+            min-height: 580px;
+            display: flex;
+            flex-direction: column;
         }
 
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--neon-green), var(--neon-green-light));
-            border-radius: 0.25rem;
+        .industry-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-green);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
-        .progress-1 .progress-fill { width: 75%; }
-        .progress-2 .progress-fill { width: 80%; }
-        .progress-3 .progress-fill { width: 65%; }
+        .industry-card.gov {
+            border-top: 4px solid var(--gov-blue);
+        }
+
+        .industry-card.real-estate {
+            border-top: 4px solid var(--real-estate-purple);
+        }
+
+        .industry-card.medical {
+            border-top: 4px solid var(--medical-teal);
+        }
+
+        .industry-card.research {
+            border-top: 4px solid var(--research-orange);
+        }
+
+        .industry-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+        }
+
+        .industry-icon.gov {
+            background: linear-gradient(135deg, var(--gov-blue), #60a5fa);
+            color: white;
+        }
+
+        .industry-icon.real-estate {
+            background: linear-gradient(135deg, var(--real-estate-purple), #a78bfa);
+            color: white;
+        }
+
+        .industry-icon.medical {
+            background: linear-gradient(135deg, var(--medical-teal), #2dd4bf);
+            color: white;
+        }
+
+        .industry-icon.research {
+            background: linear-gradient(135deg, var(--research-orange), #fbbf24);
+            color: white;
+        }
+
+        .industry-card h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .industry-tagline {
+            color: var(--neon-green);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .industry-card.gov .industry-tagline {
+            color: var(--gov-blue);
+        }
+
+        .industry-card.real-estate .industry-tagline {
+            color: var(--real-estate-purple);
+        }
+
+        .industry-card.medical .industry-tagline {
+            color: var(--medical-teal);
+        }
+
+        .industry-card.research .industry-tagline {
+            color: var(--research-orange);
+        }
+
+        .industry-description {
+            color: var(--gray-300);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+
+        .workflow {
+            background: rgba(31, 41, 55, 0.3);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .workflow h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .workflow ol {
+            padding-left: 1.5rem;
+        }
+
+        .workflow li {
+            margin-bottom: 0.75rem;
+            color: var(--gray-300);
+        }
+
+        .workflow.gov li::marker {
+            color: var(--gov-blue);
+        }
+
+        .workflow.real-estate li::marker {
+            color: var(--real-estate-purple);
+        }
+
+        .workflow.medical li::marker {
+            color: var(--medical-teal);
+        }
+
+        .workflow.research li::marker {
+            color: var(--research-orange);
+        }
+
+        .industry-features {
+            margin-top: auto;
+        }
+
+        .industry-features h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .industry-features ul {
+            list-style: none;
+            color: var(--gray-300);
+        }
+
+        .industry-features li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        /* Visual Elements between cards */
+        .grid-visual {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .grid-visual-1 {
+            top: 20%;
+            left: 10%;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(52, 211, 153, 0.1) 0%, rgba(52, 211, 153, 0) 70%);
+            border-radius: 50%;
+        }
+
+        .grid-visual-2 {
+            bottom: 20%;
+            right: 10%;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, rgba(59, 130, 246, 0) 70%);
+            border-radius: 50%;
+        }
 
         /* Contact Section */
+        .contact-section {
+            padding: 6rem 0;
+            background-color: rgba(31, 41, 55, 0.2);
+        }
+
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -598,6 +621,17 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 1024px) {
+            .industries-grid {
+                gap: 2rem;
+            }
+            
+            .industry-card {
+                min-height: 550px;
+                padding: 2rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -611,8 +645,7 @@
                 font-size: 2.5rem;
             }
 
-            .products-grid,
-            .about-grid {
+            .unification-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -625,6 +658,24 @@
             .btn {
                 width: 100%;
                 max-width: 250px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .industries-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .industry-card {
+                min-height: auto;
+                padding: 2rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -640,6 +691,16 @@
             .section {
                 padding: 4rem 0;
             }
+
+            .industry-card {
+                padding: 1.5rem;
+            }
+            
+            .industry-icon {
+                width: 3.5rem;
+                height: 3.5rem;
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -651,11 +712,11 @@
                 <div class="logo-icon">
                     <i class="fas fa-bolt"></i>
                 </div>
-                <div class="logo-text">hermes.ai</div>
+                <div class="logo-text">Hermes AI</div>
             </div>
             <div class="nav-links">
-                <a href="#products">Products</a>
-                <a href="#about">About</a>
+                <a href="#unification">What We Do</a>
+                <a href="#industries">Industry Solutions</a>
                 <a href="#contact">Contact</a>
                 <button class="btn">Get Started</button>
             </div>
@@ -669,134 +730,314 @@
     <section class="hero fade-section">
         <div class="container">
             <h1>
-                <span>AI-Powered</span>
-                <span class="highlight">Business Solutions</span>
+                <span>AI-Powered Data Unification for</span>
+                <span class="highlight">Government, Real Estate, Healthcare & Research</span>
             </h1>
-            <p>Hermes.ai delivers cutting-edge artificial intelligence tools that transform how businesses communicate and analyze data.</p>
+            <p>Transform scattered documents, spreadsheets, and images into unified, actionable intelligence. Process PDFs, CSVs, images, and handwritten notes in minutes, not hours.</p>
             <div class="hero-buttons">
                 <button class="btn btn-primary">
-                    Get Started
+                    Schedule a Demo
                     <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
                 </button>
                 <button class="btn">
-                    Learn More
+                    View Solutions
                     <i class="fas fa-external-link-alt" style="margin-left: 0.5rem;"></i>
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="section fade-section">
+    <!-- Universal Data Unification Section -->
+    <section id="unification" class="unification-section fade-section">
         <div class="container">
             <div class="section-title">
-                <h2>Our <span class="highlight">Products</span></h2>
-                <p>Discover our suite of AI-powered tools designed to revolutionize your business operations.</p>
+                <h2>Universal Data <span class="highlight">Unification</span></h2>
+                <p>One platform to extract, normalize, and fuse data from any source into actionable intelligence.</p>
             </div>
-            <div class="product-selector">
-                <button class="product-btn active" data-product="Speakly">Speakly</button>
-                <button class="product-btn" data-product="spreadsheet">Spreadsheet Buddy</button>
-            </div>
-            <div class="products-grid">
-                <div class="product-info">
-                    <h3>
-                        <div class="product-icon">
-                            <i class="fas fa-phone"></i>
+            <div class="unification-grid">
+                <div class="unification-content">
+                    <h2>From Data Chaos to <span class="highlight">Clarity</span></h2>
+                    <p>Hermes AI solves the #1 problem across industries: data scattered across multiple formats and systems. Our AI-powered platform extracts, normalizes, and fuses data from any source.</p>
+                    <p>Whether you're processing government documents, managing real estate listings, analyzing medical records, or conducting academic research, Hermes AI provides the unified view you need to make better decisions faster.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Multi-Format Processing</h4>
+                                <p>PDFs, CSVs, Images, Text, Handwritten Notes</p>
+                            </div>
                         </div>
-                        Speakly
-                    </h3>
-                    <div class="product-tagline">AI-Powered Voice Calls for Business</div>
-                    <p class="product-description">Transform your customer communication with intelligent AI voice agents that handle calls 24/7, understand context, and deliver human-like conversations.</p>
-                    
-                    <div class="features">
-                        <h4>Key Features:</h4>
-                        <ul>
-                            <li>Natural voice synthesis</li>
-                            <li>Real-time conversation analysis</li>
-                            <li>Multi-language support</li>
-                            <li>CRM integration</li>
-                            <li>Call analytics dashboard</li>
-                        </ul>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>AI-Powered Extraction</h4>
+                                <p>Smart OCR, entity recognition, schema detection</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Secure & Compliant</h4>
+                                <p>Encrypted processing, audit trails, compliance ready</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Fast Integration</h4>
+                                <p>Minutes to deploy, works with existing systems</p>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <button class="btn btn-primary">Try Speakly</button>
-                    
                 </div>
 
-                <div class="product-visual">
-                    <div class="product-preview">
-                        <div class="product-preview-content">
-                            <div class="product-preview-icon">
-                                <i class="fas fa-phone"></i>
+                <div class="unification-visual">
+                    <div class="data-source">
+                        <div class="data-source-header">
+                            <div class="data-source-icon">
+                                <i class="fas fa-file-pdf"></i>
                             </div>
-                            <h4>Speakly</h4>
-                            <p>AI-powered interface</p>
+                            <div class="data-source-title">PDF Documents</div>
                         </div>
+                        <p>Research papers, government forms, contracts, lab reports</p>
+                    </div>
+                    
+                    <div class="data-source">
+                        <div class="data-source-header">
+                            <div class="data-source-icon">
+                                <i class="fas fa-file-excel"></i>
+                            </div>
+                            <div class="data-source-title">Spreadsheets</div>
+                        </div>
+                        <p>CSV, Excel, Google Sheets, database exports</p>
+                    </div>
+                    
+                    <div class="data-source">
+                        <div class="data-source-header">
+                            <div class="data-source-icon">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <div class="data-source-title">Images & Photos</div>
+                        </div>
+                        <p>Lab notebook photos, handwritten notes, scanned documents</p>
+                    </div>
+                    
+                    <div class="data-source">
+                        <div class="data-source-header">
+                            <div class="data-source-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="data-source-title">Database & APIs</div>
+                        </div>
+                        <p>SQL, NoSQL, REST APIs, legacy system exports</p>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(52, 211, 153, 0.1); border-radius: 1rem; text-align: center;">
+                        <h4 style="color: var(--neon-green); margin-bottom: 0.5rem;">
+                            <i class="fas fa-arrow-down"></i> Unified Output
+                        </h4>
+                        <p style="color: var(--gray-300); margin: 0;">
+                            All data sources → Single, searchable, actionable intelligence
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section fade-section" style="background-color: rgba(31, 41, 55, 0.2);">
+    <!-- Industries Grid Section -->
+    <section id="industries" class="industries-section fade-section">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <h2>About <span class="highlight">Hermes.ai</span></h2>
-                    <p>Hermes.ai is at the forefront of artificial intelligence innovation, creating tools that empower businesses to work smarter, not harder. </p>
-                    <p>Our mission is to bridge the gap between people and technology by creating practical, AI-driven tools that automate everyday tasks, enhance productivity, and improve customer experiences.</p>
-                    <p>Founded by a Data Scientist/Software developer, Hermes.AI is combining cutting-edge machine learning with intuitive design to deliver solutions that actually solve real business problems.</p>
-                    
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <div class="stat-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="stat-text">
-                                <h4>AI-First</h4>
-                                <p>Cutting-edge models</p>
-                            </div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon">
-                                <i class="fas fa-bolt"></i>
-                            </div>
-                            <div class="stat-text">
-                                <h4>Fast</h4>
-                                <p>Real-time processing</p>
-                            </div>
-                        </div>
+            <div class="section-title">
+                <h2>Industry <span class="highlight">Solutions</span></h2>
+                <p>Specialized solutions built on our universal data unification platform.</p>
+            </div>
+            
+            <!-- Visual elements for background -->
+            <div class="grid-visual grid-visual-1"></div>
+            <div class="grid-visual grid-visual-2"></div>
+            
+            <div class="industries-grid">
+                <!-- Row 1: Government & Real Estate -->
+                <div class="industry-card gov">
+                    <div class="industry-icon gov">
+                        <i class="fas fa-landmark"></i>
                     </div>
+                    <h3>Government Solutions</h3>
+                    <div class="industry-tagline">Modernize Public Sector Data Processing</div>
+                    <p class="industry-description">
+                        Process millions of documents, forms, and reports across federal, provincial, and municipal departments. 
+                        Automate data extraction from legacy formats while ensuring compliance and audit trails.
+                    </p>
+                    
+                    <div class="workflow gov">
+                        <h4><i class="fas fa-map-marker-alt"></i> Perfect For:</h4>
+                        <ol>
+                            <li>IRCC Application Processing</li>
+                            <li>CRA Document Analysis</li>
+                            <li>Municipal Permit Approvals</li>
+                            <li>FOI Request Automation</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="industry-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li><i class="fas fa-check" style="color: var(--gov-blue);"></i> Bilingual English/French Processing</li>
+                            <li><i class="fas fa-check" style="color: var(--gov-blue);"></i> Canadian Data Residency Ready</li>
+                            <li><i class="fas fa-check" style="color: var(--gov-blue);"></i> ATIP/FOI Request Support</li>
+                            <li><i class="fas fa-check" style="color: var(--gov-blue);"></i> Legacy Document Modernization</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="btn" style="margin-top: 1.5rem; border-color: var(--gov-blue); color: var(--gov-blue);">
+                        <i class="fas fa-file-contract"></i> Government Demo
+                    </button>
                 </div>
 
-                <div class="about-visual">
-                    <div class="progress-item progress-1">
-                        <div class="progress-header">
-                            <div class="progress-dot"></div>
-                            <div class="progress-title">Active Development</div>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill"></div>
-                        </div>
+                <div class="industry-card real-estate">
+                    <div class="industry-icon real-estate">
+                        <i class="fas fa-home"></i>
                     </div>
-                    <div class="progress-item progress-2">
-                        <div class="progress-header">
-                            <div class="progress-dot"></div>
-                            <div class="progress-title">User Satisfaction</div>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill"></div>
-                        </div>
+                    <h3>Real Estate Intelligence</h3>
+                    <div class="industry-tagline">Client Intelligence Beyond MLS</div>
+                    <p class="industry-description">
+                        Unify client data, property research, and marketing materials into a single dashboard. 
+                        Go beyond MLS to provide exceptional client service and win more listings.
+                    </p>
+                    
+                    <div class="workflow real-estate">
+                        <h4><i class="fas fa-user-tie"></i> Agent Workflow:</h4>
+                        <ol>
+                            <li>Upload MLS exports (CSV)</li>
+                            <li>Add property photos (with sign OCR)</li>
+                            <li>Include PDF disclosures & notes</li>
+                            <li>Generate unified property dashboards</li>
+                        </ol>
                     </div>
-                    <div class="progress-item progress-3">
-                        <div class="progress-header">
-                            <div class="progress-dot"></div>
-                            <div class="progress-title">Innovation Rate</div>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill"></div>
-                        </div>
+                    
+                    <div class="industry-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li><i class="fas fa-check" style="color: var(--real-estate-purple);"></i> Client Data Fusion</li>
+                            <li><i class="fas fa-check" style="color: var(--real-estate-purple);"></i> Property Research Organization</li>
+                            <li><i class="fas fa-check" style="color: var(--real-estate-purple);"></i> Marketing Package Generation</li>
+                            <li><i class="fas fa-check" style="color: var(--real-estate-purple);"></i> Mobile-Friendly for Showings</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="btn" style="margin-top: 1.5rem; border-color: var(--real-estate-purple); color: var(--real-estate-purple);">
+                        <i class="fas fa-chart-line"></i> Real Estate Demo
+                    </button>
+                </div>
+
+                <!-- Row 2: Medical & Research -->
+                <div class="industry-card medical">
+                    <div class="industry-icon medical">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>Healthcare Data Processing</h3>
+                    <div class="industry-tagline">Patient Data Unification & Analysis</div>
+                    <p class="industry-description">
+                        Securely process lab reports, patient vitals, prescriptions, and clinical notes. 
+                        Generate clinician summaries and patient-friendly explanations from scattered medical records.
+                    </p>
+                    
+                    <div class="workflow medical">
+                        <h4><i class="fas fa-user-md"></i> Doctor Workflow:</h4>
+                        <ol>
+                            <li>Upload lab PDFs & CSV vitals</li>
+                            <li>Add discharge summaries</li>
+                            <li>Include prescription history</li>
+                            <li>Generate unified patient view</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="industry-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li><i class="fas fa-check" style="color: var(--medical-teal);"></i> Lab Report Parsing</li>
+                            <li><i class="fas fa-check" style="color: var(--medical-teal);"></i> Abnormal Value Flagging</li>
+                            <li><i class="fas fa-check" style="color: var(--medical-teal);"></i> Patient Summary Generation</li>
+                            <li><i class="fas fa-check" style="color: var(--medical-teal);"></i> Trend Analysis & Alerts</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="btn" style="margin-top: 1.5rem; border-color: var(--medical-teal); color: var(--medical-teal);">
+                        <i class="fas fa-heartbeat"></i> Healthcare Demo
+                    </button>
+                </div>
+
+                <div class="industry-card research">
+                    <div class="industry-icon research">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Research & Academia</h3>
+                    <div class="industry-tagline">Academic & Corporate Research Data Fusion</div>
+                    <p class="industry-description">
+                        Unify research data from papers, lab notebooks, surveys, and experiments. 
+                        Accelerate literature reviews, data analysis, and cross-disciplinary research collaboration.
+                    </p>
+                    
+                    <div class="workflow research">
+                        <h4><i class="fas fa-graduation-cap"></i> Perfect For:</h4>
+                        <ol>
+                            <li>University Research Teams</li>
+                            <li>Corporate R&D Departments</li>
+                            <li>Market Research Firms</li>
+                            <li>Cross-Office Data Aggregation</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="industry-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li><i class="fas fa-check" style="color: var(--research-orange);"></i> Literature Review Automation</li>
+                            <li><i class="fas fa-check" style="color: var(--research-orange);"></i> Multi-Format Research Data Fusion</li>
+                            <li><i class="fas fa-check" style="color: var(--research-orange);"></i> Citation & Reference Extraction</li>
+                            <li><i class="fas fa-check" style="color: var(--research-orange);"></i> Cross-Disciplinary Data Integration</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="btn" style="margin-top: 1.5rem; border-color: var(--research-orange); color: var(--research-orange);">
+                        <i class="fas fa-microscope"></i> Research Demo
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Stats/Info Section to fill space -->
+            <div style="margin-top: 4rem; padding: 2.5rem; background: linear-gradient(135deg, var(--gunmetal-dark), var(--gray-800)); border-radius: 1.5rem; border: 2px solid var(--gray-700); text-align: center;">
+                <h3 style="color: var(--neon-green); margin-bottom: 1rem; font-size: 1.75rem;">
+                    <i class="fas fa-chart-network"></i> Universal Platform, Specialized Solutions
+                </h3>
+                <p style="color: var(--gray-300); max-width: 800px; margin: 0 auto 1.5rem; font-size: 1.1rem;">
+                    All industry solutions are powered by the same core Hermes AI platform, ensuring consistent quality, security, and performance across every use case.
+                </p>
+                <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-top: 2rem;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--neon-green);">95%</div>
+                        <div style="color: var(--gray-400); font-size: 0.9rem;">Data Extraction Accuracy</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--neon-green);">10+</div>
+                        <div style="color: var(--gray-400); font-size: 0.9rem;">Supported File Formats</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--neon-green);">10x</div>
+                        <div style="color: var(--gray-400); font-size: 0.9rem;">Faster Processing Time</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; font-weight: 700; color: var(--neon-green);">100%</div>
+                        <div style="color: var(--gray-400); font-size: 0.9rem;">Data Residency Compliance</div>
                     </div>
                 </div>
             </div>
@@ -804,39 +1045,63 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section fade-section">
+    <section id="contact" class="contact-section fade-section">
         <div class="container">
             <div class="section-title">
                 <h2>Get in <span class="highlight">Touch</span></h2>
-                <p>Ready to transform your business with AI? We'd love to hear from you.</p>
+                <p>Ready to transform your data processing? Schedule a demo for your industry.</p>
             </div>
 
             <div class="contact-grid">
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-landmark"></i>
                     </div>
-                    <h3>Email</h3>
-                    <p>hermestradesolutions@gmail.com</p>
+                    <h3>Government Inquiries</h3>
+                    <p>Federal, provincial, or municipal solutions. Canadian data residency available.</p>
+                    <button class="btn" style="margin-top: 1rem; width: 100%;">
+                        <i class="fas fa-file-contract"></i> Government Demo
+                    </button>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <i class="fab fa-github"></i>
+                        <i class="fas fa-home"></i>
                     </div>
-                    <h3>GitHub</h3>
-                    <p>@hermes-ai-dev</p>
+                    <h3>Real Estate Solutions</h3>
+                    <p>For agents, brokerages, and property management companies.</p>
+                    <button class="btn" style="margin-top: 1rem; width: 100%;">
+                        <i class="fas fa-chart-line"></i> Real Estate Demo
+                    </button>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <i class="fab fa-linkedin"></i>
+                        <i class="fas fa-stethoscope"></i>
                     </div>
-                    <h3>LinkedIn</h3>
-                    <p>https://www.linkedin.com/company/hermes-ai-canada/about/</p>
+                    <h3>Healthcare Solutions</h3>
+                    <p>Clinics, researchers, and healthcare providers. HIPAA-compliant options.</p>
+                    <button class="btn" style="margin-top: 1rem; width: 100%;">
+                        <i class="fas fa-heartbeat"></i> Healthcare Demo
+                    </button>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Research Solutions</h3>
+                    <p>Universities, corporate R&D, market research firms, and cross-office data teams.</p>
+                    <button class="btn" style="margin-top: 1rem; width: 100%;">
+                        <i class="fas fa-microscope"></i> Research Demo
+                    </button>
                 </div>
             </div>
 
-            <div style="text-align: center;">
-                <button class="btn btn-primary">Schedule a Demo</button>
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="color: var(--gray-400); margin-bottom: 1.5rem;">
+                    <i class="fas fa-envelope"></i> General inquiries: hermestradesolutions@gmail.com
+                </p>
+                <button class="btn btn-primary">
+                    <i class="fas fa-calendar-alt"></i> Schedule General Demo
+                </button>
             </div>
         </div>
     </section>
@@ -849,7 +1114,7 @@
                     <div class="logo-icon">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <div class="logo-text">hermes.ai</div>
+                    <div class="logo-text">Hermes AI</div>
                 </div>
                 <div class="social-links">
                     <a href="#" class="social-link"><i class="fab fa-github"></i></a>
@@ -858,154 +1123,15 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2024 Hermes.ai. All rights reserved. Built with AI and ❤️</p>
+                <p>&copy; 2026 Hermes AI. AI-Powered Data Unification Platform. Canadian-owned and operated.</p>
+                <p style="font-size: 0.875rem; margin-top: 0.5rem; color: var(--gray-600);">
+                    Specializing in government, real estate, healthcare, and research data solutions
+                </p>
             </div>
         </div>
     </footer>
 
     <script>
-        // UPDATE THESE PATHS TO MATCH YOUR ACTUAL IMAGE FILENAMES AND LOCATIONS
-        const robotImages = {
-            Speakly: {
-                top: 'Speakly.png',
-                middle: 'Speakly.png'
-            },
-            spreadsheet: {
-                top: 'spreadsheetbuddy.png',
-                middle: 'spreadsheetbuddy.png'
-            }
-        };
-
-        // Function to handle image loading errors
-        function handleImageError(img, altText) {
-            img.classList.add('error');
-            img.style.display = 'flex';
-            img.style.alignItems = 'center';
-            img.style.justifyContent = 'center';
-            img.style.color = 'var(--gray-400)';
-            img.style.fontSize = '0.9rem';
-            img.style.textAlign = 'center';
-            img.style.padding = '1rem';
-            img.style.background = 'linear-gradient(135deg, var(--gray-800), var(--gunmetal-dark))';
-            img.style.border = '2px dashed var(--neon-green)';
-            img.style.borderRadius = '1rem';
-            img.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
-            img.textContent = `Image not found: ${altText}\nCheck your file path and filename`;
-        }
-
-        // Function to load robot images
-        function loadRobotImages(productType) {
-            const robotTop = document.getElementById('robot-top');
-            const robotMiddle = document.getElementById('robot-middle');
-            
-            robotTop.textContent = '';
-            robotTop.classList.remove('error');
-            robotTop.style.display = 'block';
-            robotMiddle.textContent = '';
-            robotMiddle.classList.remove('error');
-            robotMiddle.style.display = 'block';
-            
-            if (productType === 'Speakly') {
-                robotTop.src = robotImages.Speakly.top;
-                robotTop.alt = 'Speakly AI Robot';
-                robotMiddle.src = robotImages.Speakly.middle;
-                robotMiddle.alt = 'Speakly AI Assistant';
-            } else {
-                robotTop.src = robotImages.spreadsheet.top;
-                robotTop.alt = 'Spreadsheet Buddy AI Robot';
-                robotMiddle.src = robotImages.spreadsheet.middle;
-                robotMiddle.alt = 'Spreadsheet Buddy AI Assistant';
-            }
-            
-            robotTop.onerror = () => handleImageError(robotTop, robotTop.alt);
-            robotMiddle.onerror = () => handleImageError(robotMiddle, robotMiddle.alt);
-        }
-
-        // Product switching functionality
-        document.querySelectorAll('.product-btn').forEach((button) => {
-            button.addEventListener('click', () => {
-                const productType = button.getAttribute('data-product');
-                
-                document.querySelectorAll('.product-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                button.classList.add('active');
-                
-                const productInfo = document.querySelector('.product-info');
-                const productPreview = document.querySelector('.product-preview-content');
-                
-                if (productType === 'Speakly') {
-                    productInfo.innerHTML = `
-                        <h3>
-                            <div class="product-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            Speakly
-                        </h3>
-                        <div class="product-tagline">AI-Powered Voice Calls for Business</div>
-                        <p class="product-description">Transform your customer communication with intelligent AI voice agents that handle calls 24/7, understand context, and deliver human-like conversations.</p>
-                        
-                        <div class="features">
-                            <h4>Key Features:</h4>
-                            <ul>
-                                <li>Natural voice synthesis</li>
-                                <li>Real-time conversation analysis</li>
-                                <li>Multi-language support</li>
-                                <li>CRM integration</li>
-                                <li>Call analytics dashboard</li>
-                            </ul>
-                        </div>
-                        
-                        <button class="btn btn-primary">Try Speakly</button>
-                        <img src="" alt="Speakly AI Robot" class="robot-image-bottom" id="robot-top">
-                        <img src="" alt="Speakly AI Assistant" class="robot-image-bottom" id="robot-middle">
-                    `;
-                    productPreview.innerHTML = `
-                        <div class="product-preview-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h4>Speakly</h4>
-                        <p>AI-powered interface</p>
-                    `;
-                } else {
-                    productInfo.innerHTML = `
-                        <h3>
-                            <div class="product-icon">
-                                <i class="fas fa-file-excel"></i>
-                            </div>
-                            Spreadsheet Buddy
-                        </h3>
-                        <div class="product-tagline">AI Spreadsheet Automation & Analysis</div>
-                        <p class="product-description">Clean, manipulate, and analyze your spreadsheet data with cutting-edge AI that automates repetitive tasks and provides actionable insights.</p>
-        
-                        <div class="features">
-                            <h4>Key Features:</h4>
-                            <ul>
-                                <li>Automatic data cleaning</li>
-                                <li>Smart formula generation</li>
-                                <li>Pattern recognition</li>
-                                <li>Data visualization</li>
-                                <li>Batch processing automation</li>
-                            </ul>
-                        </div>
-                        
-                        <button class="btn btn-primary">Try Spreadsheet Buddy</button>
-                        <img src="" alt="Spreadsheet Buddy AI Robot" class="robot-image-bottom" id="robot-top">
-                        <img src="" alt="Spreadsheet Buddy AI Assistant" class="robot-image-bottom" id="robot-middle">
-                    `;
-                    productPreview.innerHTML = `
-                        <div class="product-preview-icon">
-                            <i class="fas fa-file-excel"></i>
-                        </div>
-                        <h4>Spreadsheet Buddy</h4>
-                        <p>AI-powered interface</p>
-                    `;
-                }
-                
-                loadRobotImages(productType);
-            });
-        });
-
         // Scroll fade animation
         document.addEventListener('DOMContentLoaded', function() {
             const fadeSections = document.querySelectorAll('.fade-section');
@@ -1026,11 +1152,42 @@
             fadeSections.forEach(section => {
                 observer.observe(section);
             });
-        });
 
-        // Load initial robot images
-        window.addEventListener('load', () => {
-            loadRobotImages('Speakly');
+            // Simple mobile menu toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                if (navLinks.style.display === 'flex') {
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.position = 'absolute';
+                    navLinks.style.top = '100%';
+                    navLinks.style.left = '0';
+                    navLinks.style.right = '0';
+                    navLinks.style.background = 'var(--gunmetal)';
+                    navLinks.style.padding = '2rem';
+                    navLinks.style.borderTop = '1px solid var(--gray-700)';
+                    navLinks.style.gap = '1.5rem';
+                }
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!event.target.closest('.nav-container') && window.innerWidth <= 768) {
+                    navLinks.style.display = 'none';
+                }
+            });
+
+            // Demo buttons
+            document.querySelectorAll('.btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const text = this.textContent.trim();
+                    if (text.includes('Demo')) {
+                        alert('Thank you for your interest! Our team will contact you shortly to schedule a demo.');
+                    }
+                });
+            });
         });
     </script>
 </body>
